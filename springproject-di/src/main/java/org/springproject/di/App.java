@@ -18,5 +18,7 @@ public class App {
 		System.out.println(dept);
 		System.out.println(dept.getInfo());
 		System.out.println(dept.getSetinfo());
+		System.out.println(dept.getMapempinfo());
+		System.out.println(dept.getMapinfo());
 	}
 }

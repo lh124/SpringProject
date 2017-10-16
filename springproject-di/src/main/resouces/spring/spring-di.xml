@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="hire" class="java.util.Date"></bean>
 	<bean id="dept" class="cn.mldn.vo.Dept">
 		<property name="deptno" value="1001"></property>
 		<property name="dname" value="财务部"></property>
 		<property name="loc" value="中国"></property>
+		<property name="mapempinfo">
+		<map>
+			<entry key="emp1" value-ref="empA"></entry>
+			<entry key="emp2" value-ref="empB"></entry>
+		</map>
+		</property>
 		<property name="emps">
 			<!-- 数组的引用用array 和list结果是一样的 可以混用 -->
 			<array>
@@ -14,6 +20,13 @@
 				<ref bean="empB" />
 			</array>
 		</property>
+		<property name="mapinfo">
+		<map>
+		<entry key="1" value="www.baidu.com"></entry>
+		<entry key="2" value="www.mldn.com"></entry>
+		</map>
+		</property>
+		
 		<property name="info">
 			<array>
 				<value>Oracle</value>
@@ -46,4 +59,8 @@
 		<property name="hiredate" ref="hire"></property>
 		<property name="sal" value="8888.0"></property>
 	</bean>
+	
+	
+	
+	
 </beans>
