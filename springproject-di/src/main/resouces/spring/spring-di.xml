@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="hire" class="java.util.Date"></bean>
+	<bean id="dept" class="cn.mldn.vo.Dept">
+		<property name="deptno" value="1001"></property>
+		<property name="dname" value="财务部"></property>
+		<property name="loc" value="中国"></property>
+		<property name="emps">
+			<!-- 数组的引用用array 和list结果是一样的 可以混用 -->
+			<array>
+				<ref bean="empA" />
+				<ref bean="empB" />
+			</array>
+		</property>
+		<property name="info">
+			<array>
+				<value>Oracle</value>
+				<value>Java</value>
+				<value>Oracle</value>
+				<value>spring</value>
+			</array>
+		</property>
+		<!-- set不保存重复数据-->
+		<property name="setinfo">
+			<array>
+				<value>Oracle</value>
+				<value>spring</value>
+				<value>spring</value>
+				<value>Java</value>
+			</array>
+		</property>
+
+	</bean>
+	<bean id="empA" class="cn.mldn.vo.Emp">
+		<property name="empno" value="11"></property>
+		<property name="ename" value="Tom"></property>
+		<property name="hiredate" ref="hire"></property>
+		<property name="sal" value="3000.2"></property>
+	</bean>
+
+	<bean id="empB" class="cn.mldn.vo.Emp">
+		<property name="empno" value="22"></property>
+		<property name="ename" value="TTT"></property>
+		<property name="hiredate" ref="hire"></property>
+		<property name="sal" value="8888.0"></property>
+	</bean>
+</beans>

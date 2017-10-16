@@ -89,5 +89,7 @@
 	<modules>
 		<module>mldnspring-ioc</module>
 		<module>springproject-ioc</module>
+		<module>sprigproject-di</module>
+		<module>springproject-di</module>
 	</modules>
 </project>
