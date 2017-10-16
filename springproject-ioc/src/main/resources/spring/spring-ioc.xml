@@ -2,6 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-<bean id="messageImpl" class="cn.mldn.message.impl.MessageImpl"/>
+	<bean id="hiredates" class="java.util.Date" />
+	<bean id="messageImpl" class="cn.mldn.message.impl.MessageImpl" />
+	<bean id="Emp" class="cn.mldn.vo.Emp">
+		<property name="empno" value="10"></property>
+		<property name="ename" value="BOb"></property>
+		<property name="sal" value="1000.0"></property>
+		<property name="hiredate" ref="hiredates"></property>
+	</bean>
 </beans>
